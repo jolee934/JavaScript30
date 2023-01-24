@@ -80,12 +80,13 @@
       //1. First declare variables = returns nodelist
       const inputs = document.querySelectorAll(".controls input");
 
-      //2. create function
+      //2. create function to change --var to new value
       function handleUpdate() {
         //color does not have a data-sizing so need "or nothing"
         const suffix = this.dataset.sizing || ``;
         document.documentElement.style.setProperty(
-          `--${this.name}, ${this.value}`
+          `--${this.name}`,
+          this.value + suffix
         );
       }
 
